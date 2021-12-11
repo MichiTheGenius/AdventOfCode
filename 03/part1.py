@@ -5,7 +5,7 @@ class PowerConsumption():
     def __init__(self):
         self.input_file = open('input')
         self.report = self.input_file.read().strip().split('\n')
-        self.lines = len(self.report)
+        self.line_count = len(self.report)
 
         # chars per line is the length of one line
         self.chars_per_line = len(self.report[0])
@@ -39,7 +39,7 @@ class PowerConsumption():
         most_common_bit = 0
         least_common_bit = 0
         for i in range(self.chars_per_line):  # go through each character of the line
-            for j in range(self.lines):  # go through each line
+            for j in range(self.line_count):  # go through each line
                 if int(self.report[j][i]) == 0:
                     self.zeros += 1
                 elif int(self.report[j][i]) == 1:
